@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27F1ACD3-6691-4893-BE74-B89DE9DD7671}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TaxiApplication</RootNamespace>
+    <AssemblyName>TaxiApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBaseHelper.cs" />
+    <Compile Include="DataBaseServer.cs" />
+    <Compile Include="Entities\AdminUsers.cs" />
+    <Compile Include="Entities\Cars.cs" />
+    <Compile Include="Entities\CarTypes.cs" />
+    <Compile Include="Entities\Drivers.cs" />
+    <Compile Include="Entities\DriversView.cs" />
+    <Compile Include="Entities\Orders.cs" />
+    <Compile Include="Entities\OrdersView.cs" />
+    <Compile Include="GUIAdmin\AddNewDriverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIAdmin\AddNewDriverForm.Designer.cs">
+      <DependentUpon>AddNewDriverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIAdmin\AdministrationDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIAdmin\AdministrationDrivers.Designer.cs">
+      <DependentUpon>AdministrationDrivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIAdmin\AdministrationOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIAdmin\AdministrationOrders.Designer.cs">
+      <DependentUpon>AdministrationOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIAdmin\OrdersControlAddDriverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIAdmin\OrdersControlAddDriverForm.Designer.cs">
+      <DependentUpon>OrdersControlAddDriverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIAdmin\SelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIAdmin\SelectForm.Designer.cs">
+      <DependentUpon>SelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIUser\OrderTaxiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIUser\OrderTaxiForm.Designer.cs">
+      <DependentUpon>OrderTaxiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIUser\OrderTrackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIUser\OrderTrackForm.Designer.cs">
+      <DependentUpon>OrderTrackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDataBase.cs" />
+    <Compile Include="Mappings\AdminUsersMap.cs" />
+    <Compile Include="Mappings\CarsMap.cs" />
+    <Compile Include="Mappings\CarTypesMap.cs" />
+    <Compile Include="Mappings\DriversMap.cs" />
+    <Compile Include="Mappings\DriversViewMap.cs" />
+    <Compile Include="Mappings\OrdersMap.cs" />
+    <Compile Include="Mappings\OrdersViewMap.cs" />
+    <Compile Include="NhibernateHelper.cs" />
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUIAdmin\AddNewDriverForm.resx">
+      <DependentUpon>AddNewDriverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIAdmin\AdministrationDrivers.resx">
+      <DependentUpon>AdministrationDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIAdmin\AdministrationOrders.resx">
+      <DependentUpon>AdministrationOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIAdmin\OrdersControlAddDriverForm.resx">
+      <DependentUpon>OrdersControlAddDriverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIAdmin\SelectForm.resx">
+      <DependentUpon>SelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIUser\OrderTaxiForm.resx">
+      <DependentUpon>OrderTaxiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIUser\OrderTrackForm.resx">
+      <DependentUpon>OrderTrackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
